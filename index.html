@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Камалов Батырбек | Portfolio</title>
+    <title>Kamalov Batyrbek | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -12,76 +12,58 @@
 
 <nav class="glass-nav">
     <div class="nav-content">
-        <a href="index.html" class="nav-logo">BK.DEV</a>
+        <a href="index.html" class="nav-logo">BK.DESIGN</a>
         <div class="nav-links">
             <a href="index.html" class="active">Главная</a>
-            <a href="tech.html">Интересное</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="timeline.html">Мой путь</a>
+            <a href="tech.html">Технологии</a>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <header class="hero">
-        <div class="profile-wrapper">
-            <img src="me.jpeg" alt="Камалов Батырбек" class="profile-img">
-            <div class="status-badge">Available for projects</div>
-        </div>
-        <h1>Камалов <span>Батырбек</span></h1>
-        <p class="hero-subtitle">UI/UX Designer & Computer Science Student</p>
-        <div class="social-pills">
-            <a href="https://t.me/batyr_kamaaa"><i class="fab fa-telegram"></i> Telegram</a>
-            <a href="mailto:kamalovbatyrbek7@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        </div>
-    </header>
-
-    <main class="grid-layout">
-        <section class="card about">
-            <h3><i class="fas fa-user-astronaut"></i> Обо мне</h3>
-            <p>Студент Торайгыров Университета. Исследую пересечение технологий и дизайна. Мой фокус сейчас — <strong>Computer Science</strong> и векторная графика.</p>
-        </section>
-
-        <section class="card skills">
-            <h3><i class="fas fa-code"></i> Стек технологий</h3>
-            <div class="tags">
-                <span>Adobe Illustrator</span>
-                <span>MySQL</span>
-                <span>Packet Tracer</span>
-                <span>Linux</span>
-                <span>Fusion 360</span>
+    <div class="bento-grid">
+        <div class="bento-item profile-card">
+            <div class="profile-header">
+                <img src="me.jpeg" alt="Камалов Батырбек" class="avatar">
+                <div class="badge">Student CS</div>
             </div>
-        </section>
-
-        <section class="card full-width projects">
-            <h3><i class="fas fa-folder-open"></i> Прогресс по неделям</h3>
-            <div class="projects-grid">
-                <a href="projects/1 nedelya/" class="project-box">
-                    <span class="week-num">01</span>
-                    <h4>Неделя</h4>
-                    <p>Основы Illustrator</p>
-                </a>
-                <a href="projects/2 nedelya/" class="project-box">
-                    <span class="week-num">02</span>
-                    <h4>Неделя</h4>
-                    <p>Векторные иконки</p>
-                </a>
-                <a href="projects/3 nedelya/" class="project-box">
-                    <span class="week-num">03</span>
-                    <h4>Неделя</h4>
-                    <p>Сложные логотипы</p>
-                </a>
-                <a href="projects/4 nedelya/" class="project-box">
-                    <span class="week-num">04</span>
-                    <h4>Неделя</h4>
-                    <p>Дизайн-системы</p>
-                </a>
+            <h1>Камалов <br><span>Батырбек</span></h1>
+            <p class="desc">UI/UX Designer & IT Student из Павлодара.</p>
+            <div class="social-btns">
+                <a href="https://t.me/batyr_kamaaa" class="btn"><i class="fab fa-telegram"></i> Telegram</a>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer>
-        <p>© 2026 Kamalov Batyrbek • Создано с помощью кода и кофе</p>
-    </footer>
+        <div class="bento-item about-card">
+            <h3><i class="fas fa-address-card"></i> Обо мне</h3>
+            <p>Обучаюсь в Торайгыров Университете. Специализируюсь на компьютерных науках и графическом дизайне.</p>
+            <div class="skills-tags">
+                <span>MySQL</span> <span>Illustrator</span> <span>Linux</span> <span>Networking</span>
+            </div>
+        </div>
+
+        <div class="bento-item projects-card">
+            <h3><i class="fas fa-tasks"></i> Учебные проекты</h3>
+            <div class="week-links">
+                <a href="projects/1%20nedelya/" class="week-btn"><span>01</span> Неделя</a>
+                <a href="projects/2%20nedelya/" class="week-btn"><span>02</span> Неделя</a>
+                <a href="projects/3%20nedelya/" class="week-btn"><span>03</span> Неделя</a>
+                <a href="projects/4%20nedelya/" class="week-btn"><span>04</span> Неделя</a>
+            </div>
+        </div>
+
+        <div class="bento-item tech-mini">
+            <h3>Интересы</h3>
+            <p>Fusion 360, Сетевое администрирование, Современные гаджеты.</p>
+        </div>
+    </div>
 </div>
+
+<footer>
+    <p>© 2026 Kamalov Batyrbek • Made with Code</p>
+</footer>
 
 </body>
 </html>
