@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Stack | BK</title><link rel="stylesheet" href="style.css"></head>
+<head>
+    <meta charset="UTF-8"><title>Batyrbek | Stack</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 <body>
-    <nav class="glass-nav"><div class="nav-content"><a href="index.html" class="nav-logo">BK.DEV</a>
-    <div class="nav-links"><a href="index.html">Home</a><a href="gallery.html">Works</a><a href="tech.html" class="active">Stack</a><a href="contact.html">Connect</a></div></div></nav>
-    
-    <div class="container">
-        <h1>Технологический <span class="accent-text">Арсенал</span></h1>
-        <div class="bento-grid" style="margin-top:40px;">
-            <div class="card">
-                <h3><i class="fas fa-paint-brush"></i> Design</h3>
-                <p>Adobe Illustrator (Pro), Figma, Photoshop. Специализируюсь на создании масштабируемой графики.</p>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BK<span>.DEV</span></a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="gallery.html">Работы</a>
+                <a href="process.html">Процесс</a>
+                <a href="tech.html" class="active">Стек</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <h1>Мой <span class="accent">Арсенал</span></h1>
+        <div class="bento-grid" style="margin-top:30px;">
+            <div class="card col-2">
+                <h2><i class="fas fa-laptop-code"></i> Engineering</h2>
+                <p>Мой подход к коду строг и структурирован. Я использую Linux (WSL) для разработки, что дает гибкость и контроль.</p>
+                <ul style="margin-top:15px; color:var(--text-muted); padding-left:20px;">
+                    <li>HTML5 / CSS3 (Modern Standards)</li>
+                    <li>MySQL Database Management</li>
+                    <li>Linux Terminal & Bash</li>
+                </ul>
             </div>
             <div class="card">
-                <h3><i class="fas fa-code"></i> Engineering</h3>
-                <p>Linux (Debian/Ubuntu), MySQL, Bash-скрипты. Умею настраивать серверную часть для проектов.</p>
+                <h2><i class="fas fa-network-wired"></i> Network</h2>
+                <p>Cisco Packet Tracer. Понимание архитектуры сетей (OSI, TCP/IP), настройка маршрутизации.</p>
             </div>
-            <div class="card">
-                <h3><i class="fas fa-network-wired"></i> Networking</h3>
-                <p>Cisco Packet Tracer. Понимание OSI, TCP/IP и принципов безопасности данных.</p>
+            <div class="card row-2">
+                <h2><i class="fas fa-pen-nib"></i> Design</h2>
+                <p>Визуальная коммуникация через вектор.</p>
+                <br>
+                <div class="btn-link" style="justify-content:center; background:rgba(99,102,241,0.1); color:var(--accent);">Adobe Illustrator</div>
+                <div class="btn-link" style="justify-content:center; background:rgba(99,102,241,0.1); color:var(--accent);">Figma</div>
+                <div class="btn-link" style="justify-content:center; background:rgba(99,102,241,0.1); color:var(--accent);">Photoshop</div>
+            </div>
+            <div class="card col-2">
+                <h2>Hardware</h2>
+                <p>Для работы использую кастомный сетап с механической клавиатурой и дополнительными мониторами для максимальной продуктивности.</p>
             </div>
         </div>
     </div>
