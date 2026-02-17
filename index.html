@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Batyrbek | Senior Developer Portfolio</title>
+    <title>Batyrbek | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -15,7 +15,6 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="gallery.html">Works</a>
                 <a href="process.html">Process</a>
-                <a href="blog.html">Notes</a>
                 <a href="tech.html">Stack</a>
                 <a href="contact.html">Connect</a>
             </div>
@@ -24,59 +23,30 @@
 
     <div class="container">
         <div class="bento-grid">
-            <div class="card col-2 row-2" style="display:flex; flex-direction:column; justify-content:center;">
-                <img src="me.jpeg" style="width:120px; border-radius:30px; margin-bottom:20px; border:2px solid var(--accent);">
-                <h1>Design <br><span class="accent-text">Engineer.</span></h1>
-                <p>Батырбек Камалов. Студент CS, создающий цифровой опыт будущего через код и визуальную эстетику.</p>
-                <div style="margin-top:20px; display:flex; gap:10px;">
-                    <span class="tag">Next.js</span> <span class="tag">Illustrator</span> <span class="tag">Linux</span>
+            <div class="card" style="grid-column: span 2;">
+                <img src="me.jpeg" style="width:100px; border-radius:25px; margin-bottom:20px; border:2px solid var(--accent);">
+                <h1>Design <span class="accent-text">Engineer.</span></h1>
+                <p>Я Батырбек, студент Computer Science. Я объединяю мощь системного администрирования Linux с эстетикой векторного дизайна. Моя цель — создавать интерфейсы, которые работают так же идеально, как выглядят.</p>
+                <div style="margin-top:20px;">
+                    <span class="tag">System Admin</span> <span class="tag">UI Designer</span> <span class="tag">Network Engineer</span>
                 </div>
             </div>
 
             <div class="card">
-                <h3><i class="far fa-clock"></i> Local Time</h3>
-                <h2 id="clock" style="font-size: 2rem;">00:00:00</h2>
-                <p>Pavlodar, KZ</p>
+                <h3><i class="fas fa-microchip"></i> Текущий фокус</h3>
+                <p>Изучаю архитектуру сетей и глубокую работу с Adobe Illustrator. Сейчас сосредоточен на создании чистого и масштабируемого кода для веба.</p>
             </div>
 
-            <div class="card">
-                <h3><i class="fas fa-arrow-up-right-from-square"></i> Projects</h3>
-                <p>Всего: 4 недели обучения</p>
-                <a href="gallery.html" style="color:var(--accent); text-decoration:none; margin-top:10px; display:inline-block;">View Gallery →</a>
-            </div>
-
-            <div class="card col-2">
-                <h3><i class="fas fa-terminal"></i> Recent Repository</h3>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="project-item"><span>W1</span><i class="fas fa-code"></i></a>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="project-item"><span>W2</span><i class="fas fa-code"></i></a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-chart-line"></i> Stats</h3>
-                <p>Commits: 50+</p>
-                <p>Projects: 12</p>
+            <div class="card" style="grid-column: span 2;">
+                <h3><i class="fas fa-folder-open"></i> Последние репозитории</h3>
+                <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="project-row">
+                    <span>Неделя 1: Основы вектора</span> <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="project-row">
+                    <span>Неделя 2: Иконки и перо</span> <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </div>
     </div>
-
-    <script>
-        // Обновление часов
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').innerText = now.toLocaleTimeString();
-        }
-        setInterval(updateClock, 1000); updateClock();
-
-        // Эффект свечения за мышкой
-        document.querySelectorAll('.card').forEach(card => {
-            card.onmousemove = e => {
-                const rect = card.getBoundingClientRect();
-                card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
-                card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
-            };
-        });
-    </script>
 </body>
 </html>
