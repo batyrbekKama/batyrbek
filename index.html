@@ -2,68 +2,130 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Batyrbek | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batyrbek | Digital Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="background-glow"></div>
+
     <nav class="glass-nav">
-        <div class="nav-container">
-            <a href="index.html" class="logo">BK<span>.DEV</span></a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Главная</a>
-                <a href="gallery.html">Работы</a>
-                <a href="process.html">Процесс</a>
-                <a href="tech.html">Стек</a>
-                <a href="contact.html">Контакты</a>
-            </div>
+        <div style="font-weight:800; color:white; margin-right:10px;">BK.</div>
+        <div class="nav-links">
+            <button class="nav-btn active" onclick="showSection('home')">Главная</button>
+            <button class="nav-btn" onclick="showSection('works')">Работы</button>
+            <button class="nav-btn" onclick="showSection('stack')">Стек</button>
+            <button class="nav-btn" onclick="showSection('contact')">Связь</button>
         </div>
     </nav>
 
-    <div class="main-wrapper">
-        <div class="bento-grid">
-            <div class="card col-2">
-                <div style="display:flex; align-items:center; gap:20px;">
-                    <img src="me.jpeg" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:2px solid var(--accent);">
-                    <div>
-                        <h1>Батырбек <br><span class="accent">Камалов</span></h1>
-                        <p>Computer Science Student & Digital Creator</p>
+    <main>
+        <section id="home" class="active">
+            <div class="grid">
+                <div class="card col-2">
+                    <div style="display:flex; gap:20px; align-items:center;">
+                        <img src="me.jpeg" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:2px solid var(--accent);">
+                        <div>
+                            <h1>Батырбек <br><span class="accent">Камалов</span></h1>
+                            <p>CS Student • UI Designer • Network Engineer</p>
+                        </div>
+                    </div>
+                    <p style="margin-top:20px;">
+                        Создаю цифровые продукты на стыке дизайна и инженерии. 
+                        Владею Adobe Illustrator так же хорошо, как и терминалом Linux.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-bolt"></i> Статус</h2>
+                    <p>📍 Павлодар, КЗ</p>
+                    <p>🎓 Торайгыров Универ</p>
+                    <div style="margin-top:20px; color:#4ade80; font-size:0.8rem;">● Online</div>
+                </div>
+
+                <div class="card col-2">
+                    <h2><i class="fab fa-github"></i> Быстрый доступ</h2>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Неделя 1 <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Неделя 2 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <p style="margin-top:20px;">
-                    Я не просто пишу код или рисую. Я создаю цифровые экосистемы. 
-                    Сочетаю логику системного администрирования (Linux/MySQL) с креативом визуального дизайна (Illustrator).
-                </p>
-            </div>
 
-            <div class="card">
-                <h2><i class="fas fa-satellite-dish"></i> Статус</h2>
-                <p>📍 Павлодар, Казахстан</p>
-                <p>🎓 Торайгыров Университет</p>
-                <div style="margin-top:auto; padding-top:10px;">
-                    <span style="color:#22c55e; font-size:0.8rem;">● Доступен для проектов</span>
+                <div class="card">
+                    <h2>Время</h2>
+                    <h1 id="clock" style="font-size:2.5rem;">00:00</h1>
+                    <p>До Сухура осталось немного.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="card col-2">
-                <h2><i class="fab fa-github"></i> Последние репозитории</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="btn-link">
-                        <span>Неделя 1: Вектор</span> <i class="fas fa-arrow-right"></i>
+        <section id="works">
+            <h1 style="margin-bottom:30px;">Моя <span class="accent">Галерея</span></h1>
+            <div class="grid">
+                <div class="card">
+                    <h2>Неделя 1</h2>
+                    <p>Основы вектора. Примитивы и Pathfinder.</p>
+                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Смотреть</a>
+                </div>
+                <div class="card">
+                    <h2>Неделя 2</h2>
+                    <p>Иконографика и Pen Tool.</p>
+                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Смотреть</a>
+                </div>
+                <div class="card">
+                    <h2>Неделя 3</h2>
+                    <p>Градиенты, тени и объем.</p>
+                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/3%20nedelya" class="link-box">Смотреть</a>
+                </div>
+                <div class="card">
+                    <h2>Неделя 4</h2>
+                    <p>Финальная иллюстрация.</p>
+                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/4%20nedelya" class="link-box">Смотреть</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack">
+            <h1 style="margin-bottom:30px;">Мой <span class="accent">Арсенал</span></h1>
+            <div class="grid">
+                <div class="card col-2">
+                    <h2><i class="fas fa-code"></i> Development</h2>
+                    <p>Пишу чистый и поддерживаемый код.</p>
+                    <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <span style="background:#222; padding:5px 10px; border-radius:5px;">HTML5</span>
+                        <span style="background:#222; padding:5px 10px; border-radius:5px;">CSS3</span>
+                        <span style="background:#222; padding:5px 10px; border-radius:5px;">MySQL</span>
+                        <span style="background:#222; padding:5px 10px; border-radius:5px;">Linux / Bash</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2><i class="fas fa-network-wired"></i> Network</h2>
+                    <p>Cisco Packet Tracer. Настройка маршрутизации и безопасности сетей.</p>
+                </div>
+                <div class="card col-2">
+                    <h2><i class="fas fa-pen-nib"></i> Design</h2>
+                    <p>Adobe Illustrator (Pro), Figma. Создание UI макетов и векторной графики любой сложности.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="grid">
+                <div class="card col-2" style="text-align:center; padding:50px;">
+                    <h1>Свяжитесь со мной</h1>
+                    <p style="margin-bottom:30px;">Я открыт для предложений по дизайну и разработке.</p>
+                    <a href="https://t.me/batyr_kamaaa" class="link-box" style="justify-content:center; background:var(--accent); font-size:1.2rem;">
+                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Написать в Telegram
                     </a>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="btn-link">
-                        <span>Неделя 2: Иконки</span> <i class="fas fa-arrow-right"></i>
+                    <a href="mailto:kamalovbatyrbek7@gmail.com" class="link-box" style="justify-content:center; margin-top:20px;">
+                        Email: kamalovbatyrbek7@gmail.com
                     </a>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="card">
-                <h2>Связь</h2>
-                <p>Давайте создадим что-то крутое.</p>
-                <a href="contact.html" class="btn-link" style="background:var(--accent); justify-content:center;">Написать мне</a>
-            </div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
