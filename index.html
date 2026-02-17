@@ -2,68 +2,52 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamalov Batyrbek | Portfolio</title>
+    <title>Батырбек | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <a href="index.html" style="color:white; font-weight:800; text-decoration:none;">BK.DESIGN</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Главная</a>
+                <a href="gallery.html">Работы</a>
+                <a href="timeline.html">Путь</a>
+                <a href="tech.html">Технологии</a>
+            </div>
+        </div>
+    </nav>
 
-<nav class="glass-nav">
-    <div class="nav-content">
-        <a href="index.html" class="nav-logo">BK.DESIGN</a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Главная</a>
-            <a href="gallery.html">Галерея</a>
-            <a href="timeline.html">Мой путь</a>
-            <a href="tech.html">Технологии</a>
+    <div class="container">
+        <div class="bento-grid">
+            <div class="card profile-card">
+                <img src="me.jpeg" class="avatar">
+                <h1>Батырбек</h1>
+                <p>IT Student & Designer</p>
+                <div class="skills-grid">
+                    <div class="skill-item">Illustrator</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">Linux</div>
+                    <div class="skill-item">C++</div>
+                </div>
+                <a href="https://t.me/batyr_kamaaa" style="display:block; margin-top:20px; color:var(--accent); text-decoration:none; font-weight:bold;">@batyr_kamaaa</a>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <h3><i class="fas fa-folder-open"></i> Учебный прогресс</h3>
+                <a href="projects/1%20nedelya/" class="project-row"><span>Неделя 1: Основы вектора</span> <i class="fas fa-chevron-right"></i></a>
+                <a href="projects/2%20nedelya/" class="project-row"><span>Неделя 2: Работа с пером</span> <i class="fas fa-chevron-right"></i></a>
+                <a href="projects/3%20nedelya/" class="project-row"><span>Неделя 3: Логотипы</span> <i class="fas fa-chevron-right"></i></a>
+                <a href="projects/4%20nedelya/" class="project-row"><span>Неделя 4: Финал</span> <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <h3><i class="fas fa-user"></i> Обучение в Торайгыров Университет</h3>
+                <p>Изучаю Computer Science. В данный момент фокусируюсь на сетевых технологиях (Packet Tracer) и проектировании баз данных.</p>
+            </div>
         </div>
     </div>
-</nav>
-
-<div class="container">
-    <div class="bento-grid">
-        <div class="bento-item profile-card">
-            <div class="profile-header">
-                <img src="me.jpeg" alt="Камалов Батырбек" class="avatar">
-                <div class="badge">Student CS</div>
-            </div>
-            <h1>Камалов <br><span>Батырбек</span></h1>
-            <p class="desc">UI/UX Designer & IT Student из Павлодара.</p>
-            <div class="social-btns">
-                <a href="https://t.me/batyr_kamaaa" class="btn"><i class="fab fa-telegram"></i> Telegram</a>
-            </div>
-        </div>
-
-        <div class="bento-item about-card">
-            <h3><i class="fas fa-address-card"></i> Обо мне</h3>
-            <p>Обучаюсь в Торайгыров Университете. Специализируюсь на компьютерных науках и графическом дизайне.</p>
-            <div class="skills-tags">
-                <span>MySQL</span> <span>Illustrator</span> <span>Linux</span> <span>Networking</span>
-            </div>
-        </div>
-
-        <div class="bento-item projects-card">
-            <h3><i class="fas fa-tasks"></i> Учебные проекты</h3>
-            <div class="week-links">
-                <a href="projects/1%20nedelya/" class="week-btn"><span>01</span> Неделя</a>
-                <a href="projects/2%20nedelya/" class="week-btn"><span>02</span> Неделя</a>
-                <a href="projects/3%20nedelya/" class="week-btn"><span>03</span> Неделя</a>
-                <a href="projects/4%20nedelya/" class="week-btn"><span>04</span> Неделя</a>
-            </div>
-        </div>
-
-        <div class="bento-item tech-mini">
-            <h3>Интересы</h3>
-            <p>Fusion 360, Сетевое администрирование, Современные гаджеты.</p>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 Kamalov Batyrbek • Made with Code</p>
-</footer>
-
 </body>
 </html>
