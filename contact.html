@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Контакты | BK</title>
+    <meta charset="UTF-8"><title>Batyrbek | Contact</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="glass-nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">BK.DESIGN</a>
-            <div class="nav-links"><a href="index.html">Главная</a><a href="contact.html" class="active">Контакты</a></div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">BK<span>.DEV</span></a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="gallery.html">Работы</a>
+                <a href="process.html">Процесс</a>
+                <a href="tech.html">Стек</a>
+                <a href="contact.html" class="active">Контакты</a>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <h1 style="margin-bottom:40px;">Свяжись <span>со мной</span></h1>
-        <div class="bento-grid">
-            <div class="card" style="grid-column: span 2;">
-                <h3>Написать мне</h3>
-                <p style="margin-bottom:20px;">Я всегда открыт для новых проектов и предложений.</p>
-                <a href="https://t.me/batyr_kamaaa" class="project-row">Telegram: @batyr_kamaaa</a>
-                <a href="mailto:kamalovbatyrbek7@gmail.com" class="project-row">Email: kamalovbatyrbek7@gmail.com</a>
-            </div>
-            <div class="card">
-                <h3>Соцсети</h3>
-                <p>Следите за моими обновлениями здесь.</p>
-                <div style="margin-top:20px;">
-                    <span class="tag">Instagram</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">LinkedIn</span>
-                </div>
+    <div class="main-wrapper" style="max-width: 800px;">
+        <div class="card" style="text-align: center; padding: 50px;">
+            <h1 style="margin-bottom: 20px;">Давайте <span class="accent">Сотрудничать</span></h1>
+            <p style="margin-bottom: 40px;">
+                Я всегда открыт для интересных предложений, будь то дизайн-проект, 
+                настройка сетевой инфраструктуры или веб-разработка.
+            </p>
+            
+            <a href="https://t.me/batyr_kamaaa" class="btn-link" style="background: var(--accent); justify-content: center; font-size: 1.2rem; padding: 20px;">
+                <i class="fab fa-telegram-plane" style="margin-right: 10px;"></i> Написать в Telegram
+            </a>
+            
+            <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center;">
+                <a href="mailto:kamalovbatyrbek7@gmail.com" class="btn-link">Email</a>
+                <a href="https://github.com/batyrbekKama" class="btn-link">GitHub</a>
             </div>
         </div>
     </div>
