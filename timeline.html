@@ -6,9 +6,19 @@
     <title>Наш Путь | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .petal { position: fixed; top: -10%; pointer-events: none; z-index: 9999; animation: fall linear forwards; }
-        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        /* Стили лепестков */
+        .petal { 
+            position: fixed; 
+            top: -10%; 
+            pointer-events: none; 
+            z-index: 9999; 
+            animation: fall linear forwards; 
+        }
+        @keyframes fall { 
+            to { transform: translateY(110vh) rotate(360deg); } 
+        }
         
+        /* Стили таймлайна */
         .story-container { position: relative; padding-left: 40px; }
         .story-node { position: relative; margin-bottom: 50px; }
         .story-node::before {
@@ -22,11 +32,32 @@
         }
         .story-node:last-child::after { display: none; }
         
-        .today-node::before { background: var(--gold) !important; box-shadow: 0 0 25px var(--gold) !important; }
+        .today-node::before { 
+            background: var(--gold) !important; 
+            box-shadow: 0 0 25px var(--gold) !important; 
+        }
+
         .date-tag { color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
-        .highlight-text { color: #fff; font-style: italic; border-left: 2px solid var(--accent); padding-left: 15px; margin: 10px 0; }
+        .highlight-text { 
+            color: #fff; 
+            font-style: italic; 
+            border-left: 2px solid var(--accent); 
+            padding-left: 15px; 
+            margin: 10px 0; 
+        }
         
-        .today-card { border: 2px solid var(--gold) !important; background: rgba(253, 224, 71, 0.05) !important; }
+        .today-card { 
+            border: 2px solid var(--gold) !important; 
+            background: rgba(253, 224, 71, 0.05) !important; 
+            min-height: 400px;
+        }
+
+        /* Чтобы ничего не вылетало за пределы экрана */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +81,7 @@
                     <div class="story-node">
                         <span class="date-tag">Июль 2025</span>
                         <h3>Первая встреча</h3>
-                        <p>Ты пришла устраиваться ко мне на работу. Это был обычный день, который стал началом самого важного главы в моей жизни.</p>
+                        <p>Ты пришла устраиваться ко мне на работу. Это был обычный день, ставший началом самой важной главы в моей жизни.</p>
                     </div>
 
                     <div class="story-node">
@@ -68,7 +99,7 @@
                     <div class="story-node">
                         <span class="date-tag">Январь 2026</span>
                         <h3>Разлука и Ташкент</h3>
-                        <p>Когда ты уехала в Ташкент, тишина вокруг напомнила мне, как много ты значишь. Я скучал каждой клеткой тела, даже если внешне этого не показывал.</p>
+                        <p>Когда ты снова уехала в Ташкент, тишина вокруг напомнила мне, как много ты значишь. Я скучал каждой клеткой тела, даже если внешне этого не показывал.</p>
                         <p class="highlight-text">Я понял, что по-настоящему люблю тебя, когда между нами легли километры.</p>
                     </div>
 
@@ -81,18 +112,18 @@
                 </div>
             </div>
 
-            <div class="card today-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+            <div class="card today-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; padding: 40px 20px;">
                 <div>
-                    <h2 class="title-font" style="font-size: 3rem; color: var(--gold); margin-bottom: 0;">8</h2>
-                    <p style="color: var(--gold); font-weight: 800; margin-top: -10px;">МАРТА</p>
+                    <h2 class="title-font" style="font-size: 3.5rem; color: var(--gold); margin: 0;">8</h2>
+                    <p style="color: var(--gold); font-weight: 800; margin-top: -10px; letter-spacing: 5px;">МАРТА</p>
                 </div>
                 
-                <div style="margin: 20px 0;">
-                    <h1 style="font-size: 4rem; color: var(--accent); line-height: 1;">∞</h1>
-                    <p style="font-size: 0.9rem; color: #fff;">Бесконечно люблю и ценю тебя</p>
+                <div style="margin: 30px 0;">
+                    <h1 style="font-size: 5rem; color: var(--accent); line-height: 1; margin: 0;">∞</h1>
+                    <p style="font-size: 1rem; color: #fff; margin-top: 10px;">Бесконечно люблю и ценю тебя</p>
                 </div>
 
-                <div style="font-size: 2rem;">💐</div>
+                <div style="font-size: 3rem; filter: drop-shadow(0 0 10px var(--accent));">💐</div>
             </div>
         </div>
     </main>
@@ -101,6 +132,8 @@
     <script>
         function createPetals() {
             const colors = ['#ffccd5', '#ffb3c1', '#f472b6', '#fde047'];
+            const container = document.body;
+            
             for (let i = 0; i < 25; i++) {
                 setTimeout(() => {
                     const petal = document.createElement('div');
@@ -110,13 +143,19 @@
                     petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                     petal.style.borderRadius = '0 80% 0 80%';
                     petal.style.left = Math.random() * 100 + 'vw';
+                    
                     const duration = Math.random() * 5 + 5;
                     petal.style.animationDuration = duration + 's';
-                    document.body.appendChild(petal);
-                    setTimeout(() => petal.remove(), duration * 1000);
+                    
+                    container.appendChild(petal);
+                    
+                    setTimeout(() => {
+                        petal.remove();
+                    }, duration * 1000);
                 }, i * 400);
             }
         }
+        
         setInterval(createPetals, 4000);
         createPetals();
     </script>
