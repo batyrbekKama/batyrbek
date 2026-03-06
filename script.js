@@ -1,4 +1,4 @@
-// Легкий 3D эффект для карточек при движении мыши
+// Легкий 3D эффектыва для карточек при движении мыши
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
