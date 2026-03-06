@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея | BK.DESIGN</title>
+    <title>Мои чувства | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стиль для лепестков */
+        .petal {
+            position: fixed;
+            top: -10%;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -12,30 +29,73 @@
         <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
             <a href="index.html">Главная</a>
-            <a href="gallery.html" class="active">Галерея</a>
+            <a href="gallery.html" class="active">Чувства</a>
             <a href="timeline.html">Путь</a>
             <a href="tech.html">Технологии</a>
         </div>
     </nav>
 
     <main>
-        <h1 class="title-font" style="margin-bottom: 30px; text-align: center;">Мои достижения для тебя</h1>
+        <h1 class="title-font" style="margin-bottom: 30px; text-align: center;">То, что я чувствую к тебе</h1>
+        
         <div class="bento-grid">
             <div class="card">
-                <h3>01. Введение</h3>
-                <p>Основы Adobe Illustrator. Работа с примитивами и кривыми Безье. Первые шаги к эстетике.</p>
+                <h3 style="color: var(--accent);">Моё вдохновение</h3>
+                <p>Каждый мой успех, каждая строчка кода и каждый дизайн — всё это благодаря тебе. Ты даешь мне силы становиться лучше каждый день.</p>
             </div>
-            <div class="card">
-                <h3>02. Иконографика</h3>
-                <p>Создание сетов иконок, работа с толщиной линий и стилизацией. Точность в каждой детали.</p>
+
+            <div class="card span-2">
+                <h3 style="color: var(--accent);">Твоя улыбка</h3>
+                <p>Для меня нет ничего важнее, чем видеть тебя счастливой. Твой смех — лучший саундтрек для моей жизни, а твои глаза — мой главный ориентир.</p>
             </div>
+
+            <div class="card span-2">
+                <h3 style="color: var(--accent);">Обещание</h3>
+                <p>Я обещаю быть твоей опорой, защищать твой покой и любить тебя так сильно, как только возможно. Ты — мой мир, Рушана.</p>
+            </div>
+
             <div class="card">
-                <h3>03. Объем и Свет</h3>
-                <p>Работа с градиентами, тенями и создание псевдо-3D объектов.</p>
+                <h3 style="color: var(--accent);">Навсегда</h3>
+                <p>Цифры в коде могут измениться, но мои чувства к тебе — константа, которая будет только расти с каждым днем.</p>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Функция для создания падающих лепестков
+        function createPetals() {
+            const colors = ['#ffccd5', '#ffb3c1', '#ff8fa3', '#f472b6']; // Нежные оттенки
+            const petalCount = 30;
+
+            for (let i = 0; i < petalCount; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    
+                    // Делаем лепесток похожим на листочек
+                    petal.style.width = Math.random() * 15 + 10 + 'px';
+                    petal.style.height = Math.random() * 10 + 10 + 'px';
+                    petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    petal.style.borderRadius = '0 80% 0 80%'; // Форма лепестка
+                    petal.style.opacity = Math.random() * 0.7 + 0.3;
+                    
+                    petal.style.left = Math.random() * 100 + 'vw';
+                    
+                    const duration = Math.random() * 5 + 5; // Скорость падения
+                    petal.style.animationDuration = duration + 's';
+                    
+                    document.body.appendChild(petal);
+
+                    // Удаляем после завершения анимации
+                    setTimeout(() => petal.remove(), duration * 1000);
+                }, i * 300); // Постепенное появление
+            }
+        }
+
+        // Запускаем бесконечный цикл лепестков
+        setInterval(createPetals, 3000);
+        createPetals();
+    </script>
 </body>
 </html>
