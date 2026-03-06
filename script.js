@@ -1,50 +1,37 @@
-// Функция создания плавающих элементов (сердечки и лилии)
-function createAmbient() {
-    const container = document.getElementById('ambient-container');
-    const icons = ['❤️', '⚜️', '🌸', '✨'];
-    
-    for (let i = 0; i < 20; i++) {
-        const el = document.createElement('div');
-        el.className = 'floating-element';
-        el.innerText = icons[Math.floor(Math.random() * icons.length)];
-        el.style.left = Math.random() * 100 + 'vw';
-        el.style.top = Math.random() * 100 + 'vh';
-        el.style.fontSize = Math.random() * 20 + 15 + 'px';
-        el.style.opacity = Math.random() * 0.5;
-        
-        container.appendChild(el);
-        animateElement(el);
-    }
-}
-
-function animateElement(el) {
-    let posX = parseFloat(el.style.left);
-    let posY = parseFloat(el.style.top);
-    let angle = Math.random() * Math.PI * 2;
-    
-    function move() {
-        posX += Math.cos(angle) * 0.2;
-        posY += Math.sin(angle) * 0.2;
-        
-        if (posX < 0) posX = 100; if (posX > 100) posX = 0;
-        if (posY < 0) posY = 100; if (posY > 100) posY = 0;
-        
-        el.style.left = posX + 'vw';
-        el.style.top = posY + 'vh';
-        requestAnimationFrame(move);
-    }
-    move();
-}
-
-// ОЧЕНЬ плавное движение карточек
-document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.card');
-    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-    
-    cards.forEach(card => {
-        card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+// SPA: Функция переключения секций
+function showSection(sectionId) {
+    // 1. Скрываем все секции
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
     });
-});
 
-window.onload = createAmbient;
+    // 2. Убираем подсветку у всех кнопок
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // 3. Показываем нужную секцию с анимацией
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+
+    // 4. Подсвечиваем кнопку, на которую нажали
+    const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => 
+        btn.getAttribute('onclick').includes(sectionId)
+    );
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+}
+
+// Эффект перспективы Bento-grid при наведении (full-3d)
+document.querySelectorAll('.card').forEach(card => {
+    card.onmousemove = e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', x + 'px');
+        card.style.setProperty('--y', y + 'px');
+    };
+});
