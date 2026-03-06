@@ -1,37 +1,22 @@
-// SPA: Функция переключения секций
-function showSection(sectionId) {
-    // 1. Скрываем все секции
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
-    });
-
-    // 2. Убираем подсветку у всех кнопок
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // 3. Показываем нужную секцию с анимацией
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-        targetSection.classList.add('active');
-    }
-
-    // 4. Подсвечиваем кнопку, на которую нажали
-    const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => 
-        btn.getAttribute('onclick').includes(sectionId)
-    );
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
-}
-
-// Эффект перспективы Bento-grid при наведении (full-3d)
+// Легкий 3D эффект для карточек при движении мыши
 document.querySelectorAll('.card').forEach(card => {
-    card.onmousemove = e => {
+    card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--x', x + 'px');
-        card.style.setProperty('--y', y + 'px');
-    };
+        const x = e.clientX - rect.left; // x position within the element.
+        const y = e.clientY - rect.top;  // y position within the element.
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        card.style.borderColor = 'var(--accent)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        card.style.borderColor = 'var(--border)';
+    });
 });
