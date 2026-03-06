@@ -3,70 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для Рушаны | Queen Edition</title>
+    <title>Для Рушаны | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Bad+Script&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="background-glow" id="ambient-bg"></div>
 
     <nav class="glass-nav">
-        <div style="font-weight:800; color:white; margin-right:10px;">С 8 Марта!</div>
+        <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
-            <button class="nav-btn active" onclick="showSection('home')">Главная</button>
-            <button class="nav-btn" onclick="showSection('works')">Моменты</button>
-            <button class="nav-btn" onclick="showSection('story')">История</button>
-            <button class="nav-btn" onclick="showSection('connect')">Связь</button>
+            <a href="index.html" class="active">Главная</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="timeline.html">Путь</a>
+            <a href="tech.html">Технологии</a>
         </div>
     </nav>
 
     <main>
-        <section id="home" class="active">
-            <div class="bento-grid">
-                <div class="card col-2 row-2" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                    
-                    <div class="lily-handdrawn">
-                        <div class="lily-petal" style="transform: rotate(0deg) translate(-50%, 0);"></div>
-                        <div class="lily-petal" style="transform: rotate(72deg) translate(-50%, 0);"></div>
-                        <div class="lily-petal" style="transform: rotate(144deg) translate(-50%, 0);"></div>
-                        <div class="lily-petal" style="transform: rotate(216deg) translate(-50%, 0);"></div>
-                        <div class="lily-petal" style="transform: rotate(288deg) translate(-50%, 0);"></div>
-                    </div>
-
-                    <h1 class="script-font" style="margin-top:20px;">С 8 Марта, Рушана!</h1>
-                    <p style="text-align:center;">Ты — самое прекрасное и нежное приключение в моей жизни. Сияй, вдохновляй и будь самой счастливой!</p>
+        <div class="bento-grid">
+            
+            <div class="card span-2">
+                <div class="lily-handdrawn">
+                    <div class="lily-petal" style="transform: rotate(0deg) translate(-50%, 0);"></div>
+                    <div class="lily-petal" style="transform: rotate(72deg) translate(-50%, 0);"></div>
+                    <div class="lily-petal" style="transform: rotate(144deg) translate(-50%, 0);"></div>
+                    <div class="lily-petal" style="transform: rotate(216deg) translate(-50%, 0);"></div>
+                    <div class="lily-petal" style="transform: rotate(288deg) translate(-50%, 0);"></div>
                 </div>
 
-                <div class="card">
-                    <h3>Твой день</h3>
-                    <p>13.02.2007</p>
-                    <div style="margin-top:10px; font-size:0.8rem; color:var(--accent);">Дата, когда мир стал лучше.</div>
-                </div>
+                <p style="color: var(--accent); font-weight: 800; margin-bottom: 5px;">8 МАРТА 2026</p>
+                <h1 class="title-font">С праздником, Рушана!</h1>
+                <p style="max-width: 500px; margin-top: 15px;">Ты — самое прекрасное и нежное приключение в моей жизни. Сияй, вдохновляй и будь самой счастливой!</p>
+            </div>
 
-                <div class="card col-2">
-                    <h3>Моё признание</h3>
-                    <p class="script-font" style="font-size: 1.5rem;">Я тебя очень сильно люблю! Ты мой главный «проект» и бесконечное вдохновение.</p>
-                </div>
+            <div class="card">
+                <h3>Твой день</h3>
+                <h1 style="color: #fff;">13.02</h1>
+                <p>2007 год. Дата, когда мир стал ярче и обрел тебя.</p>
+            </div>
 
-                <div class="card" style="display: flex; justify-content: center; align-items: center;">
-                    <div class="aliia-3d-wrap">
-                        <img src="aliia.jpg" class="aliia-img" alt="Рушана">
-                    </div>
+            <div class="card span-2">
+                <div class="image-container">
+                    <img src="aliia.jpg" alt="Рушана">
                 </div>
             </div>
-        </section>
 
-        <section id="works">
-            <h1 style="margin-bottom:30px;">Наши <span>Моменты</span></h1>
-            <div class="bento-grid">
-                <div class="card"><h3>Неделя 1</h3><p>Основы нашего общения.</p><a href="#" class="link-box">Смотреть</a></div>
-                <div class="card"><h3>Неделя 2</h3><p>Твоя улыбка.</p><a href="#" class="link-box">Смотреть</a></div>
-                <div class="card"><h3>Неделя 3</h3><p>Наши мечты.</p><a href="#" class="link-box">Смотреть</a></div>
+            <div class="card">
+                <h3>Forever.</h3>
+                <p style="margin-top: 15px; font-size: 1.1rem; color: #fff; line-height: 1.6;">
+                    Рушана, твоя красота и твой ум — это то, что вдохновляет меня каждый день. Я тебя очень сильно люблю!
+                </p>
             </div>
-        </section>
 
-        </main>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
