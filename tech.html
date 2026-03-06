@@ -5,37 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Технологии | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .petal { position: fixed; top: -10%; pointer-events: none; z-index: 9999; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        
+        /* Креативный элемент: Теги чувств */
+        .tech-tag {
+            display: inline-block; padding: 5px 15px; border-radius: 50px;
+            border: 1px solid var(--accent); color: var(--accent);
+            margin: 5px; font-size: 0.8rem; text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-
     <nav class="glass-nav">
         <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
             <a href="index.html">Главная</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Чувства</a>
             <a href="timeline.html">Путь</a>
             <a href="tech.html" class="active">Технологии</a>
         </div>
     </nav>
 
     <main>
-        <h1 class="title-font" style="margin-bottom: 30px; text-align: center;">Фундамент</h1>
+        <h1 class="title-font" style="text-align: center;">Из чего мы сделаны</h1>
         <div class="bento-grid">
             <div class="card">
-                <h3 style="color: var(--accent);">Love.js</h3>
-                <p>Библиотека бесконечных чувств к тебе. Работает без багов и сбоев.</p>
+                <h3 style="color: var(--accent);">Core Engine: Верность</h3>
+                <p>Главный движок наших отношений. Работает на 100% мощности, не допуская ошибок и сбоев.</p>
+                <div style="margin-top:15px;">
+                    <span class="tech-tag">Hardcoded Love</span>
+                    <span class="tech-tag">No Bugs</span>
+                </div>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent);">Trust.db</h3>
-                <p>Надежная база данных, где хранится моё полное доверие.</p>
+                <h3 style="color: var(--accent);">Frontend: Твой стиль</h3>
+                <p>Твоя внешность, твои манеры, твой смех — это идеальный интерфейс, в который я влюбился с первого клика.</p>
+                <div style="margin-top:15px;">
+                    <span class="tech-tag">Perfect UI</span>
+                    <span class="tech-tag">Beautiful Soul</span>
+                </div>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent);">Future.css</h3>
-                <p>Стиль нашей жизни, который мы пишем и настраиваем вместе.</p>
+                <h3 style="color: var(--accent);">Database: Мои воспоминания</h3>
+                <p>Храню каждую твою фразу, каждое сообщение и каждый взгляд в зашифрованном архиве своего сердца.</p>
+                <div style="margin-top:15px;">
+                    <span class="tech-tag">Unlimited Storage</span>
+                    <span class="tech-tag">Secure Heart</span>
+                </div>
+            </div>
+            <div class="card span-3" style="text-align: center; border: 1px dashed var(--accent);">
+                <h3 class="title-font">Система работает стабильно...</h3>
+                <p>Статус: <strong>Бесконечно счастлив рядом с тобой</strong></p>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        function createPetals() {
+            const colors = ['#ffccd5', '#ffb3c1', '#f472b6'];
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    petal.style.width = Math.random() * 15 + 10 + 'px';
+                    petal.style.height = Math.random() * 10 + 10 + 'px';
+                    petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    petal.style.borderRadius = '0 80% 0 80%';
+                    petal.style.left = Math.random() * 100 + 'vw';
+                    const duration = Math.random() * 5 + 5;
+                    petal.style.animationDuration = duration + 's';
+                    document.body.appendChild(petal);
+                    setTimeout(() => petal.remove(), duration * 1000);
+                }, i * 400);
+            }
+        }
+        setInterval(createPetals, 4000); createPetals();
+    </script>
 </body>
 </html>
