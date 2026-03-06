@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путь | BK.DESIGN</title>
+    <title>Наш Путь | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .petal { position: fixed; top: -10%; pointer-events: none; z-index: 9999; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        
+        /* Креативный элемент: Линия жизни */
+        .path-line {
+            position: relative; padding-left: 30px; border-left: 2px dashed var(--accent);
+            margin: 40px 0;
+        }
+        .path-point { margin-bottom: 40px; position: relative; }
+        .path-point::before {
+            content: '❤'; position: absolute; left: -41px; top: 0;
+            background: var(--bg); color: var(--accent); font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-
     <nav class="glass-nav">
         <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
             <a href="index.html">Главная</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Чувства</a>
             <a href="timeline.html" class="active">Путь</a>
             <a href="tech.html">Технологии</a>
         </div>
     </nav>
 
     <main>
-        <h1 class="title-font" style="margin-bottom: 30px; text-align: center;">Наша история</h1>
+        <h1 class="title-font" style="text-align: center;">История, написанная сердцем</h1>
         <div class="bento-grid">
-            <div class="card span-3" style="text-align: center;">
-                <h3 style="color: var(--accent); font-size: 1.5rem;">13 Февраля 2007</h3>
-                <p style="font-size: 1.1rem;">Твоё появление. Начало самой красивой истории в этом мире.</p>
+            <div class="card span-2">
+                <div class="path-line">
+                    <div class="path-point">
+                        <h3>13.02.2007 — Начало Вселенной</h3>
+                        <p>В этот день мир стал в миллион раз красивее, потому что в нем появилась ты. Это самая важная точка в моей личной истории.</p>
+                    </div>
+                    <div class="path-point">
+                        <h3>Наше «Сейчас»</h3>
+                        <p>Каждый день с тобой — это новая глава, которую я хочу перечитывать вечно. Ты мой лучший выбор и моя самая большая удача.</p>
+                    </div>
+                    <div class="path-point">
+                        <h3>Бесконечность</h3>
+                        <p>Я не знаю, что будет в коде будущего, но я точно знаю, что в нем всегда будет твоё имя.</p>
+                    </div>
+                </div>
             </div>
-            <div class="card span-3" style="text-align: center;">
-                <h3 style="color: var(--accent); font-size: 1.5rem;">8 Марта 2026</h3>
-                <p style="font-size: 1.1rem;">Этот момент. Я создаю этот сайт, чтобы ты улыбнулась.</p>
+            <div class="card" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+                <div>
+                    <h1 style="font-size: 4rem; color: var(--accent);">∞</h1>
+                    <p>Дней, часов и секунд я хочу провести рядом с тобой.</p>
+                </div>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        function createPet
