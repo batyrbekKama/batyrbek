@@ -1,87 +1,35 @@
-// Пароль доступа (Пусть он будет 1234, это примитивно, но романтично)
-const SECRET_PASS = "1234";
+// Создание летающих лепестков
+function createPetals() {
+    const container = document.getElementById('petals-container');
+    const petalCount = 30;
 
-// Проверка авторизации
-function checkAuth() {
-    const input = document.getElementById('pass-input').value;
-    const error = document.getElementById('error-msg');
-    
-    if (input === SECRET_PASS) {
-        // Если ключ верный - скрываем авторизацию, показываем сайт
-        document.getElementById('auth-overlay').style.display = 'none';
-        document.getElementById('site-content').style.display = 'block';
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
         
-        // Сохраняем в браузере, чтобы не вводить каждый раз
-        localStorage.setItem('isAuth', 'true');
-    } else {
-        error.style.display = 'block';
-        // Тряска окна при ошибке
-        document.querySelector('.auth-card').animate([
-            { transform: 'translateX(-5px)' },
-            { transform: 'translateX(5px)' },
-            { transform: 'translateX(-5px)' },
-            { transform: 'translateX(5px)' },
-            { transform: 'translateX(0px)' }
-        ], { duration: 200, iterations: 2 });
+        const size = Math.random() * 15 + 10 + 'px';
+        petal.style.width = size;
+        petal.style.height = size;
+        
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+        
+        container.appendChild(petal);
     }
 }
 
-// Проверка при загрузке: если уже входил, не спрашивать пароль
-window.onload = function() {
-    if (localStorage.getItem('isAuth') === 'true') {
-        document.getElementById('auth-overlay').style.display = 'none';
-        document.getElementById('site-content').style.display = 'block';
-    }
-    updateClock();
-}
+window.onload = () => {
+    createPetals();
+};
 
-// Функция переключения секций
-function showSection(sectionId) {
-    // 1. Скрываем все секции
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
+// Простой параллакс для карточек
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.card');
+    const x = (window.innerWidth / 2 - e.pageX) / 50;
+    const y = (window.innerHeight / 2 - e.pageY) / 50;
+    
+    cards.forEach(card => {
+        card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
     });
-
-    // 2. Убираем подсветку у всех кнопок
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // 3. Показываем нужную секцию с анимацией
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-        targetSection.classList.add('active');
-    }
-
-    // 4. Подсвечиваем кнопку, на которую нажали
-    const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => 
-        btn.getAttribute('onclick').includes(sectionId)
-    );
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
-}
-
-// Живые часы любви
-function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const clockElement = document.getElementById('clock');
-    if (clockElement) {
-        clockElement.innerText = `${hours}:${minutes}`;
-    }
-}
-setInterval(updateClock, 1000);
-updateClock();
-
-// Эффект перспективы Bento-grid при наведении (full-3d)
-document.querySelectorAll('.card').forEach(card => {
-    card.onmousemove = e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--x', x + 'px');
-        card.style.setProperty('--y', y + 'px');
-    };
 });
