@@ -2,111 +2,67 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С 8 Марта! | Love Edition by Batyrbek</title>
+    <title>Для моей Алии | 8 Марта</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="background-glow"></div>
+    <div id="petals-container"></div>
 
-    <div id="auth-overlay">
-        <div class="card auth-card" style="position:relative;">
-            <i class="floating-3d-heart" style="top:-20px; left:10px;">❤️</i>
-            <h2>🔒 Только для Неё</h2>
-            <p>Введите ключ доступа, чтобы открыть праздничный мир Алии.</p>
-            <input type="password" id="pass-input" placeholder="Ключ (1234)">
-            <button onclick="checkAuth()" class="link-box" style="width:100%; justify-content:center; background:var(--accent); font-weight:800; font-size:1.1rem;">Открыть сердце →</button>
-            <p id="error-msg" style="color:#ef4444; margin-top:10px; display:none;">Неверный ключ!</p>
-        </div>
-    </div>
+    <main id="site-content">
+        <section id="home" class="active">
+            <div style="max-width: 1100px; margin: 50px auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 20px;">
+                
+                <div class="card col-2" style="grid-column: span 2; text-align: center;">
+                    <h1>С 8 Марта, <span style="color:var(--accent)">Любимая</span></h1>
+                    
+                    <div class="flower-container">
+                        <div class="petal-custom" style="--r: 45deg"></div>
+                        <div class="petal-custom" style="--r: 135deg"></div>
+                        <div class="petal-custom" style="--r: 225deg"></div>
+                        <div class="petal-custom" style="--r: 315deg"></div>
+                    </div>
 
-    <div id="site-content" style="display:none;">
-        <nav class="glass-nav">
-            <div style="font-weight:800; color:white; margin-right:10px;">С 8 Марта!</div>
-            <div class="nav-links">
-                <button class="nav-btn active" onclick="showSection('home')">Главная</button>
-                <button class="nav-btn" onclick="showSection('moments')">Моменты</button>
-                <button class="nav-btn" onclick="showSection('process')">История</button>
-                <button class="nav-btn" onclick="showSection('connect')">Связь</button>
-            </div>
-        </nav>
+                    <p class="love-letter">
+                        Алия, ты — мой самый прекрасный цветок в этом мире. 
+                        Я хочу, чтобы ты знала: моя любовь к тебе безгранична, как космос, 
+                        и нежна, как весеннее утро. Спасибо, что ты есть.
+                    </p>
+                </div>
 
-        <main>
-            <section id="home" class="active">
-                <div class="grid">
-                    <div class="card col-2 row-2" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                        <img src="aliia.jpg" class="aliia-3d-photo" alt="Алия, самая прекрасная">
-                        <h1 class="accent-text" style="margin-top:20px;">Праздник Весны.</h1>
-                        <p style="text-align:center;">Пусть этот день будет таким же ярким и нежным, как ты сама. С любовью, Батырбек.</p>
-                        <div style="margin-top:20px; display:flex; gap:10px;">
-                            <span class="tag">Светлая</span> <span class="tag">Нежная</span> <span class="tag">Творческая</span>
+                <div class="card">
+                    <div class="photo-wrapper">
+                        <img src="aliia.jpg" class="aliia-3d">
+                    </div>
+                </div>
+
+                <div class="card col-3" style="grid-column: span 3;">
+                    <h2 style="margin-bottom: 20px; text-align: center; color: var(--accent);">Почему я тебя люблю:</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px;">
+                            <h3 style="color:var(--gold)">Твоя душа</h3>
+                            <p>Самая добрая и искренняя, которую я когда-либо встречал.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px;">
+                            <h3 style="color:var(--gold)">Твой смех</h3>
+                            <p>Он лечит любые мои раны и заставляет улыбаться в ответ.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px;">
+                            <h3 style="color:var(--gold)">Твоя поддержка</h3>
+                            <p>Ты всегда рядом, и это дает мне силы двигаться вперед.</p>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <h3>Для Алии</h3>
-                        <p>Ты делаешь мир лучше каждый день.</p>
-                    </div>
-
-                    <div class="card col-2">
-                        <h3><i class="fas fa-heart"></i> От кого</h3>
-                        <p>С любовью, Батырбек. Навсегда твой.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>❤️ Время</h3>
-                        <h1 id="clock" style="font-size:2.5rem;">00:00</h1>
-                        <p>Время любви.</p>
-                    </div>
                 </div>
-            </section>
 
-            <section id="works">
-                <h1 style="margin-bottom:30px;">Наши <span class="accent-text">Моменты</span></h1>
-                <div class="grid">
-                    <div class="card"><i class="floating-3d-heart" style="top:10px; right:10px; font-size:1.5rem">❤️</i><h3>Неделя 1</h3><p>Первое знакомство.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Открыть</a></div>
-                    <div class="card"><h3>Неделя 2</h3><p>Первая прогулка.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Открыть</a></div>
-                    <div class="card"><h3>Неделя 3</h3><p>Наши улыбки.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/3%20nedelya" class="link-box">Открыть</a></div>
-                    <div class="card"><h3>Неделя 4</h3><p>Наши мечты.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/4%20nedelya" class="link-box">Открыть</a></div>
-                </div>
-            </section>
+            </div>
+        </section>
+    </main>
 
-            <section id="process">
-                <h1 style="margin-bottom:30px; class="accent-text">Хронология Моментов</h1>
-                <div class="grid">
-                    <div class="card col-2"><h3>01. Яркая вспышка</h3><p>Момент, когда я впервые увидел тебя. Весь мир вокруг замер.</p></div>
-                    <div class="card col-2"><h3>02. Нежные чувства</h3><p>Как твоя улыбка заставляла мое сердце биться быстрее каждый день.</p></div>
-                    <div class="card col-2"><h3>03. Общие мечты</h3><p>Как мы вместе строили планы на будущее.</p></div>
-                    <div class="card col-2"><h3>04. Моя Любовь</h3><p>Моя вечная и нежная любовь к тебе.</p></div>
-                </div>
-            </section>
-
-            <section id="stack">
-                <h1 style="margin-bottom:30px;">Мои <span>Пожелания</span></h1>
-                <div class="grid">
-                    <div class="card col-2"><span class="tag">Свет</span><h3 style="margin-top:10px;">Счастья Безграничного</h3><p>Пусть каждый твой день будет наполнен радостью.</p></div>
-                    <div class="card"><span class="tag">IT</span><h3>Ярких Моментов</h3><p>Пусть твои мечты сбываются легко!</p></div>
-                </div>
-            </section>
-
-            <section id="contact">
-                <div class="grid">
-                    <div class="card col-2" style="text-align:center; padding:50px;">
-                        <h1>Напиши Мне Поздравление</h1>
-                        <p style="margin-bottom:30px;">Я всегда на связи. Моя любовь, Алия.</p>
-                        <a href="https://t.me/batyr_kamaaa" class="link-box" style="justify-content:center; background:var(--accent); font-size:1.2rem;">
-                            <i class="fab fa-telegram" style="margin-right:10px;"></i> Написать в Telegram
-                        </a>
-                        <a href="mailto:kamalovbatyrbek7@gmail.com" class="link-box" style="justify-content:center; margin-top:20px;">
-                            Email: kamalovbatyrbek7@gmail.com
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+    <nav class="glass-nav">
+        <button class="nav-btn active">Главная</button>
+        <button class="nav-btn">Наши даты</button>
+        <button class="nav-btn">Галерея</button>
+        <button class="nav-btn">Твой Батырбек</button>
+    </nav>
 
     <script src="script.js"></script>
 </body>
