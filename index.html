@@ -2,51 +2,42 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rushana | 08.03</title>
+    <title>Rushana | 8 March</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="mesh-gradient"></div>
-
-    <div class="container">
-        <div class="card big">
-            <p style="color: var(--accent); font-weight: 800; margin-bottom: 10px;">8 МАРТА 2026</p>
-            <h1>RUSHANA<br><span style="color: transparent; -webkit-text-stroke: 1px #fff;">LOVE.</span></h1>
-            <p style="margin-top: 20px;">Для самой невероятной девушки, рожденной 13 февраля 2007 года. Этот день — твой.</p>
+    <nav class="glass-nav">
+        <div style="font-weight:800; color:var(--accent);">BK.DESIGN</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Главная</a>
+            <a href="gallery.html">Работы</a>
+            <a href="timeline.html">Путь</a>
+            <a href="tech.html">Стек</a>
+            <a href="contact.html">Связь</a>
         </div>
+    </nav>
 
-        <div class="card tall">
-            <div class="photo-frame">
-                <img src="aliia.jpg" alt="Rushana"> </div>
+    <main class="main-wrapper">
+        <div class="bento-grid">
+            <div class="card" style="grid-column: span 2;">
+                <p style="color:var(--accent); font-weight:800; margin-bottom:10px;">8 МАРТА 2026</p>
+                <h1 class="title-font">С праздником, Рушана!</h1>
+                <p>Ты — вдохновение, ради которого создаются такие проекты. Сияй ярче всех звезд.</p>
+                <a href="gallery.html" class="btn">Посмотреть всё</a>
+            </div>
+            <div class="card">
+                <img src="aliia.jpg" class="rushana-img" alt="Rushana">
+            </div>
+            <div class="card">
+                <h3>13.02.2007</h3>
+                <p>День, когда мир стал лучше. Твой день рождения — начало этой истории.</p>
+            </div>
+            <div class="card" style="grid-column: span 2;">
+                <h3>Моё признание</h3>
+                <p class="title-font" style="font-size: 1.5rem;">Я тебя очень сильно люблю. Ты — мой главный «проект» и смысл двигаться вперед.</p>
+            </div>
         </div>
-
-        <div class="card">
-            <h2>13.02</h2>
-            <p>2007 — год, когда мир стал ярче.</p>
-        </div>
-
-        <div class="card wide">
-            <h2>Сияй ярче всех.</h2>
-            <p>Рушана, твоя красота и твой ум — это то, что вдохновляет меня каждый день. Я тебя очень сильно люблю.</p>
-            <a href="https://t.me/batyr_kamaaa" class="btn">Написать Батырбеку</a>
-        </div>
-
-        <div class="card">
-            <h3 style="color: var(--accent)">Ум</h3>
-            <p>Твой мозг — это космос.</p>
-        </div>
-        <div class="card">
-            <h3 style="color: var(--accent)">Стиль</h3>
-            <p>Всегда безупречна.</p>
-        </div>
-
-        <div class="card wide" style="background: var(--accent);">
-            <h2 style="color: #fff; font-size: 3rem;">FOREVER.</h2>
-        </div>
-    </div>
-
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
