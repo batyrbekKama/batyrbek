@@ -3,130 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batyrbek | Digital Portfolio</title>
+    <title>С 8 Марта! | Love Edition by Batyrbek</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="background-glow"></div>
 
-    <nav class="glass-nav">
-        <div style="font-weight:800; color:white; margin-right:10px;">Обо мне</div>
-        <div class="nav-links">
-            <button class="nav-btn active" onclick="showSection('home')">Главная</button>
-            <button class="nav-btn" onclick="showSection('works')">Работы</button>
-            <button class="nav-btn" onclick="showSection('stack')">Стек</button>
-            <button class="nav-btn" onclick="showSection('contact')">Связь</button>
+    <div id="auth-overlay">
+        <div class="card auth-card" style="position:relative;">
+            <i class="floating-3d-heart" style="top:-20px; left:10px;">❤️</i>
+            <h2>🔒 Только для Неё</h2>
+            <p>Введите ключ доступа, чтобы открыть праздничный мир Алии.</p>
+            <input type="password" id="pass-input" placeholder="Ключ (1234)">
+            <button onclick="checkAuth()" class="link-box" style="width:100%; justify-content:center; background:var(--accent); font-weight:800; font-size:1.1rem;">Открыть сердце →</button>
+            <p id="error-msg" style="color:#ef4444; margin-top:10px; display:none;">Неверный ключ!</p>
         </div>
-    </nav>
+    </div>
 
-    <main>
-        <section id="home" class="active">
-            <div class="grid">
-                <div class="card col-2">
-                    <div style="display:flex; gap:20px; align-items:center;">
-                        <img src="me.jpeg" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:2px solid var(--accent);">
-                        <div>
-                            <h1>Батырбек <br><span class="accent">Камалов</span></h1>
-                            <p>CS Student • UI Designer • Network Engineer</p>
+    <div id="site-content" style="display:none;">
+        <nav class="glass-nav">
+            <div style="font-weight:800; color:white; margin-right:10px;">С 8 Марта!</div>
+            <div class="nav-links">
+                <button class="nav-btn active" onclick="showSection('home')">Главная</button>
+                <button class="nav-btn" onclick="showSection('moments')">Моменты</button>
+                <button class="nav-btn" onclick="showSection('process')">История</button>
+                <button class="nav-btn" onclick="showSection('connect')">Связь</button>
+            </div>
+        </nav>
+
+        <main>
+            <section id="home" class="active">
+                <div class="grid">
+                    <div class="card col-2 row-2" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <img src="aliia.jpg" class="aliia-3d-photo" alt="Алия, самая прекрасная">
+                        <h1 class="accent-text" style="margin-top:20px;">Праздник Весны.</h1>
+                        <p style="text-align:center;">Пусть этот день будет таким же ярким и нежным, как ты сама. С любовью, Батырбек.</p>
+                        <div style="margin-top:20px; display:flex; gap:10px;">
+                            <span class="tag">Светлая</span> <span class="tag">Нежная</span> <span class="tag">Творческая</span>
                         </div>
                     </div>
-                    <p style="margin-top:20px;">
-                        Создаю цифровые продукты на стыке дизайна и инженерии. 
-                        Владею Adobe Illustrator так же хорошо, как и терминалом Linux.
-                    </p>
-                </div>
 
-                <div class="card">
-                    <h2><i class="fas fa-bolt"></i> Статус</h2>
-                    <p>📍 Павлодар, КЗ</p>
-                    <p>🎓 Торайгыров Универ</p>
-                    <div style="margin-top:20px; color:#4ade80; font-size:0.8rem;">● Online</div>
-                </div>
+                    <div class="card">
+                        <h3>Для Алии</h3>
+                        <p>Ты делаешь мир лучше каждый день.</p>
+                    </div>
 
-                <div class="card col-2">
-                    <h2><i class="fab fa-github"></i> Быстрый доступ</h2>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                        <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Неделя 1 <i class="fas fa-arrow-right"></i></a>
-                        <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Неделя 2 <i class="fas fa-arrow-right"></i></a>
+                    <div class="card col-2">
+                        <h3><i class="fas fa-heart"></i> От кого</h3>
+                        <p>С любовью, Батырбек. Навсегда твой.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>❤️ Время</h3>
+                        <h1 id="clock" style="font-size:2.5rem;">00:00</h1>
+                        <p>Время любви.</p>
                     </div>
                 </div>
+            </section>
 
-                <div class="card">
-                    <h2>Время</h2>
-                    <h1 id="clock" style="font-size:2.5rem;">00:00</h1>
-                    <p>До Сухура осталось немного.</p>
+            <section id="works">
+                <h1 style="margin-bottom:30px;">Наши <span class="accent-text">Моменты</span></h1>
+                <div class="grid">
+                    <div class="card"><i class="floating-3d-heart" style="top:10px; right:10px; font-size:1.5rem">❤️</i><h3>Неделя 1</h3><p>Первое знакомство.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Открыть</a></div>
+                    <div class="card"><h3>Неделя 2</h3><p>Первая прогулка.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Открыть</a></div>
+                    <div class="card"><h3>Неделя 3</h3><p>Наши улыбки.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/3%20nedelya" class="link-box">Открыть</a></div>
+                    <div class="card"><h3>Неделя 4</h3><p>Наши мечты.</p><a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/4%20nedelya" class="link-box">Открыть</a></div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="works">
-            <h1 style="margin-bottom:30px;">Моя <span class="accent">Галерея</span></h1>
-            <div class="grid">
-                <div class="card">
-                    <h2>Неделя 1</h2>
-                    <p>Основы вектора. Примитивы и Pathfinder.</p>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/1%20nedelye" class="link-box">Смотреть</a>
+            <section id="process">
+                <h1 style="margin-bottom:30px; class="accent-text">Хронология Моментов</h1>
+                <div class="grid">
+                    <div class="card col-2"><h3>01. Яркая вспышка</h3><p>Момент, когда я впервые увидел тебя. Весь мир вокруг замер.</p></div>
+                    <div class="card col-2"><h3>02. Нежные чувства</h3><p>Как твоя улыбка заставляла мое сердце биться быстрее каждый день.</p></div>
+                    <div class="card col-2"><h3>03. Общие мечты</h3><p>Как мы вместе строили планы на будущее.</p></div>
+                    <div class="card col-2"><h3>04. Моя Любовь</h3><p>Моя вечная и нежная любовь к тебе.</p></div>
                 </div>
-                <div class="card">
-                    <h2>Неделя 2</h2>
-                    <p>Иконографика и Pen Tool.</p>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/2%20nedelya" class="link-box">Смотреть</a>
-                </div>
-                <div class="card">
-                    <h2>Неделя 3</h2>
-                    <p>Градиенты, тени и объем.</p>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/3%20nedelya" class="link-box">Смотреть</a>
-                </div>
-                <div class="card">
-                    <h2>Неделя 4</h2>
-                    <p>Финальная иллюстрация.</p>
-                    <a href="https://github.com/batyrbekKama/batyrbek/tree/main/projects/4%20nedelya" class="link-box">Смотреть</a>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="stack">
-            <h1 style="margin-bottom:30px;">Мой <span class="accent">Арсенал</span></h1>
-            <div class="grid">
-                <div class="card col-2">
-                    <h2><i class="fas fa-code"></i> Development</h2>
-                    <p>Пишу чистый и поддерживаемый код.</p>
-                    <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
-                        <span style="background:#222; padding:5px 10px; border-radius:5px;">HTML5</span>
-                        <span style="background:#222; padding:5px 10px; border-radius:5px;">CSS3</span>
-                        <span style="background:#222; padding:5px 10px; border-radius:5px;">MySQL</span>
-                        <span style="background:#222; padding:5px 10px; border-radius:5px;">Linux / Bash</span>
+            <section id="stack">
+                <h1 style="margin-bottom:30px;">Мои <span>Пожелания</span></h1>
+                <div class="grid">
+                    <div class="card col-2"><span class="tag">Свет</span><h3 style="margin-top:10px;">Счастья Безграничного</h3><p>Пусть каждый твой день будет наполнен радостью.</p></div>
+                    <div class="card"><span class="tag">IT</span><h3>Ярких Моментов</h3><p>Пусть твои мечты сбываются легко!</p></div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="grid">
+                    <div class="card col-2" style="text-align:center; padding:50px;">
+                        <h1>Напиши Мне Поздравление</h1>
+                        <p style="margin-bottom:30px;">Я всегда на связи. Моя любовь, Алия.</p>
+                        <a href="https://t.me/batyr_kamaaa" class="link-box" style="justify-content:center; background:var(--accent); font-size:1.2rem;">
+                            <i class="fab fa-telegram" style="margin-right:10px;"></i> Написать в Telegram
+                        </a>
+                        <a href="mailto:kamalovbatyrbek7@gmail.com" class="link-box" style="justify-content:center; margin-top:20px;">
+                            Email: kamalovbatyrbek7@gmail.com
+                        </a>
                     </div>
                 </div>
-                <div class="card">
-                    <h2><i class="fas fa-network-wired"></i> Network</h2>
-                    <p>Cisco Packet Tracer. Настройка маршрутизации и безопасности сетей.</p>
-                </div>
-                <div class="card col-2">
-                    <h2><i class="fas fa-pen-nib"></i> Design</h2>
-                    <p>Adobe Illustrator (Pro), Figma. Создание UI макетов и векторной графики любой сложности.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="grid">
-                <div class="card col-2" style="text-align:center; padding:50px;">
-                    <h1>Свяжитесь со мной</h1>
-                    <p style="margin-bottom:30px;">Я открыт для предложений по дизайну и разработке.</p>
-                    <a href="https://t.me/batyr_kamaaa" class="link-box" style="justify-content:center; background:var(--accent); font-size:1.2rem;">
-                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Написать в Telegram
-                    </a>
-                    <a href="mailto:kamalovbatyrbek7@gmail.com" class="link-box" style="justify-content:center; margin-top:20px;">
-                        Email: kamalovbatyrbek7@gmail.com
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
