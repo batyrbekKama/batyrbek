@@ -22,19 +22,11 @@
         }
         .story-node:last-child::after { display: none; }
         
-        /* Золотое свечение для сегодняшнего дня */
-        .today-node::before {
-            background: var(--gold) !important;
-            box-shadow: 0 0 25px var(--gold) !important;
-        }
-
+        .today-node::before { background: var(--gold) !important; box-shadow: 0 0 25px var(--gold) !important; }
         .date-tag { color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
         .highlight-text { color: #fff; font-style: italic; border-left: 2px solid var(--accent); padding-left: 15px; margin: 10px 0; }
         
-        .today-card {
-            border: 2px solid var(--gold) !important;
-            background: rgba(253, 224, 71, 0.05) !important;
-        }
+        .today-card { border: 2px solid var(--gold) !important; background: rgba(253, 224, 71, 0.05) !important; }
     </style>
 </head>
 <body>
@@ -58,36 +50,49 @@
                     <div class="story-node">
                         <span class="date-tag">Июль 2025</span>
                         <h3>Первая встреча</h3>
-                        <p>Ты пришла устраиваться ко мне на работу. Тогда я еще не знал, что передо мной стоит человек, который перевернет мою жизнь.</p>
+                        <p>Ты пришла устраиваться ко мне на работу. Это был обычный день, который стал началом самого важного главы в моей жизни.</p>
                     </div>
 
                     <div class="story-node">
                         <span class="date-tag">28 Августа 2025</span>
                         <h3>Начало «Нас»</h3>
-                        <p>День, когда мы официально стали парой. С этого момента начались наши радостные моменты.</p>
+                        <p>День, когда всё изменилось официально. Наши первые радостные моменты, которые я храню в памяти как сокровище.</p>
+                    </div>
+
+                    <div class="story-node">
+                        <span class="date-tag">Испытания</span>
+                        <h3>Любовь и Уважение</h3>
+                        <p>У нас бывали и недопонимания, но именно через них я понял, как сильно тебя уважаю. Ты человек, ради которого хочется становиться лучше.</p>
                     </div>
 
                     <div class="story-node">
                         <span class="date-tag">Январь 2026</span>
-                        <h3>Осознание в разлуке</h3>
-                        <p>Когда ты снова уехала в Ташкент, я по-настоящему осознал свою любовь. Я скучал каждой клеткой, даже если молчал об этом.</p>
+                        <h3>Разлука и Ташкент</h3>
+                        <p>Когда ты уехала в Ташкент, тишина вокруг напомнила мне, как много ты значишь. Я скучал каждой клеткой тела, даже если внешне этого не показывал.</p>
+                        <p class="highlight-text">Я понял, что по-настоящему люблю тебя, когда между нами легли километры.</p>
                     </div>
 
                     <div class="story-node today-node">
                         <span class="date-tag" style="color: var(--gold);">8 Марта 2026</span>
-                        <h3 style="color: var(--gold);">Международный женский день</h3>
-                        <p>Сегодня я хочу поздравить тебя с твоим праздником. Ты — самая нежная, сильная и вдохновляющая девушка. Этот сайт — мой скромный способ сказать тебе спасибо за то, что ты есть в моей жизни.</p>
-                        <p class="highlight-text" style="border-color: var(--gold);">Ты — моё главное достижение и моя самая большая гордость. С праздником, любимая!</p>
+                        <h3 style="color: var(--gold);">Твой праздник, любимая</h3>
+                        <p>Поздравляю тебя с 8 Марта! Ты — самая вдохновляющая девушка, которую я знаю. Сияй всегда, а я буду рядом.</p>
                     </div>
 
                 </div>
             </div>
 
-            <div class="card today-card" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                <h2 class="title-font" style="font-size: 3rem; color: var(--gold);">8</h2>
-                <h3 style="color: var(--gold);">МАРТА</h3>
-                <p>Твой день. Твой праздник. Твоя весна.</p>
-                <div style="margin-top: 20px; font-size: 2rem;">💐</div>
+            <div class="card today-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+                <div>
+                    <h2 class="title-font" style="font-size: 3rem; color: var(--gold); margin-bottom: 0;">8</h2>
+                    <p style="color: var(--gold); font-weight: 800; margin-top: -10px;">МАРТА</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <h1 style="font-size: 4rem; color: var(--accent); line-height: 1;">∞</h1>
+                    <p style="font-size: 0.9rem; color: #fff;">Бесконечно люблю и ценю тебя</p>
+                </div>
+
+                <div style="font-size: 2rem;">💐</div>
             </div>
         </div>
     </main>
