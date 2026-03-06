@@ -6,25 +6,43 @@
     <title>Мои чувства | BK.DESIGN</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Стиль для лепестков */
-        .petal {
-            position: fixed;
-            top: -10%;
-            user-select: none;
-            pointer-events: none;
-            z-index: 9999;
-            animation: fall linear forwards;
+        .petal { position: fixed; top: -10%; pointer-events: none; z-index: 9999; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        
+        /* Креативный элемент: Генеративное сердце */
+        .heart-container {
+            width: 150px; height: 150px;
+            margin: 20px auto;
+            position: relative;
+            animation: heartPulse 3s ease-in-out infinite;
+        }
+        .heart-petal {
+            position: absolute; bottom: 50%; left: 50%;
+            width: 50px; height: 80px;
+            background: linear-gradient(to top, var(--accent), var(--gold));
+            border-radius: 50% 50% 0 50%;
+            transform-origin: bottom right;
+            opacity: 0.8;
+            filter: blur(1px);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        @keyframes heartPulse {
+            0% { transform: scale(1) rotate(0); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(0); }
         }
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-            }
+        /* Теги чувств */
+        .feeling-tag {
+            display: inline-block; padding: 5px 15px; border-radius: 50px;
+            border: 1px solid var(--accent); color: var(--accent);
+            margin: 5px; font-size: 0.8rem; text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
         }
+        .span-3 { grid-column: span 3; }
     </style>
 </head>
 <body>
-
     <nav class="glass-nav">
         <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
@@ -36,28 +54,42 @@
     </nav>
 
     <main>
-        <h1 class="title-font" style="margin-bottom: 30px; text-align: center;">То, что я чувствую к тебе</h1>
+        <h1 class="title-font" style="text-align: center; margin-bottom: 30px;">Что я чувствую к тебе</h1>
         
         <div class="bento-grid">
+            
+            <div class="card span-3" style="text-align: center;">
+                <div class="heart-container">
+                    <div class="heart-petal" style="transform: rotate(0deg) translate(-50%, 0);"></div>
+                    <div class="heart-petal" style="transform: rotate(72deg) translate(-50%, 0);"></div>
+                    <div class="heart-petal" style="transform: rotate(144deg) translate(-50%, 0);"></div>
+                    <div class="heart-petal" style="transform: rotate(216deg) translate(-50%, 0);"></div>
+                    <div class="heart-petal" style="transform: rotate(288deg) translate(-50%, 0);"></div>
+                </div>
+                <p class="title-font" style="font-size: 1.2rem; color: #fff;">Алгоритм моей любви</p>
+                <div style="margin-top:20px;">
+                    <span class="feeling-tag">Нежность</span>
+                    <span class="feeling-tag">Уважение</span>
+                    <span class="feeling-tag">Страсть</span>
+                    <span class="feeling-tag">Забота</span>
+                    <span class="feeling-tag">Преданность</span>
+                    <span class="feeling-tag">Радость</span>
+                </div>
+            </div>
+
+            <div class="card span-2" style="background: rgba(251, 113, 133, 0.05); border-color: var(--accent);">
+                <h3>🎁 Моё поздравление</h3>
+                <p>Рушана, в этот прекрасный день 8 Марта я хочу пожелать тебе, чтобы твоя жизнь была такой же яркой и нежной, как этот праздник. Пусть каждый твой день будет наполнен улыбками, теплом и любовью, которую я тебе дарю.</p>
+                <div style="margin-top:15px; font-size: 1rem; color: var(--gold); font-style: italic;">
+                    «Ты моё самое большое достижение и моя самая главная ценность. С праздником!»
+                </div>
+            </div>
+
             <div class="card">
-                <h3 style="color: var(--accent);">Моё вдохновение</h3>
-                <p>Каждый мой успех, каждая строчка кода и каждый дизайн — всё это благодаря тебе. Ты даешь мне силы становиться лучше каждый день.</p>
+                <h3> ❤️ Моя Любовь</h3>
+                <p>Ты даже не представляешь, насколько сильно я тебя люблю. Моё сердце замирает каждый раз, когда я думаю о тебе. Будь счастлива!</p>
             </div>
-
-            <div class="card span-2">
-                <h3 style="color: var(--accent);">Твоя улыбка</h3>
-                <p>Для меня нет ничего важнее, чем видеть тебя счастливой. Твой смех — лучший саундтрек для моей жизни, а твои глаза — мой главный ориентир.</p>
-            </div>
-
-            <div class="card span-2">
-                <h3 style="color: var(--accent);">Обещание</h3>
-                <p>Я обещаю быть твоей опорой, защищать твой покой и любить тебя так сильно, как только возможно. Ты — мой мир, Рушана.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--accent);">Навсегда</h3>
-                <p>Цифры в коде могут измениться, но мои чувства к тебе — константа, которая будет только расти с каждым днем.</p>
-            </div>
+            
         </div>
     </main>
 
@@ -65,36 +97,24 @@
     <script>
         // Функция для создания падающих лепестков
         function createPetals() {
-            const colors = ['#ffccd5', '#ffb3c1', '#ff8fa3', '#f472b6']; // Нежные оттенки
-            const petalCount = 30;
-
-            for (let i = 0; i < petalCount; i++) {
+            const colors = ['#ffccd5', '#ffb3c1', '#f472b6', '#fde047'];
+            for (let i = 0; i < 25; i++) {
                 setTimeout(() => {
                     const petal = document.createElement('div');
                     petal.className = 'petal';
-                    
-                    // Делаем лепесток похожим на листочек
                     petal.style.width = Math.random() * 15 + 10 + 'px';
                     petal.style.height = Math.random() * 10 + 10 + 'px';
                     petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    petal.style.borderRadius = '0 80% 0 80%'; // Форма лепестка
-                    petal.style.opacity = Math.random() * 0.7 + 0.3;
-                    
+                    petal.style.borderRadius = '0 80% 0 80%';
                     petal.style.left = Math.random() * 100 + 'vw';
-                    
-                    const duration = Math.random() * 5 + 5; // Скорость падения
+                    const duration = Math.random() * 5 + 5;
                     petal.style.animationDuration = duration + 's';
-                    
                     document.body.appendChild(petal);
-
-                    // Удаляем после завершения анимации
                     setTimeout(() => petal.remove(), duration * 1000);
-                }, i * 300); // Постепенное появление
+                }, i * 400);
             }
         }
-
-        // Запускаем бесконечный цикл лепестков
-        setInterval(createPetals, 3000);
+        setInterval(createPetals, 4000);
         createPetals();
     </script>
 </body>
