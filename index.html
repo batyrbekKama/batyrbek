@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для Рушаны | BK.DESIGN</title>
+    <title>Для Рушаны | Queen Edition</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* НЕЖНЫЕ ЛЕПЕСТКИ */
+        .petal {
+            position: fixed;
+            top: -10%;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* КРАСИВАЯ РАМКА ДЛЯ ФОТО */
+        .photo-frame {
+            position: relative;
+            padding: 12px;
+            background: linear-gradient(45deg, var(--accent), var(--gold), var(--accent));
+            background-size: 200% 200%;
+            animation: borderGlow 4s linear infinite;
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.4);
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .photo-frame img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid var(--bg);
+        }
+
+        /* ЭФФЕКТ СИЯНИЯ ВОКРУГ ФОТО */
+        .photo-frame::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: var(--accent);
+            filter: blur(20px);
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,7 +64,7 @@
         <a href="index.html" class="logo">BK.<span>DESIGN</span></a>
         <div class="nav-links">
             <a href="index.html" class="active">Главная</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Чувства</a>
             <a href="timeline.html">Путь</a>
             <a href="tech.html">Технологии</a>
         </div>
@@ -30,27 +82,29 @@
                     <div class="lily-petal" style="transform: rotate(288deg) translate(-50%, 0);"></div>
                 </div>
 
-                <p style="color: var(--accent); font-weight: 800; margin-bottom: 5px;">8 МАРТА 2026</p>
-                <h1 class="title-font">С праздником, Рушана!</h1>
-                <p style="max-width: 500px; margin-top: 15px;">Ты — самое прекрасное и нежное приключение в моей жизни. Сияй, вдохновляй и будь самой счастливой!</p>
+                <p style="color: var(--accent); font-weight: 800; letter-spacing: 2px;">8 МАРТА 2026</p>
+                <h1 class="title-font">Для моей королевы</h1>
+                <p style="max-width: 500px; margin-top: 15px; font-size: 1.1rem;">
+                    Рушана, ты — самое прекрасное, что случалось со мной. Этот сайт я создал, чтобы показать, как сильно я тебя люблю.
+                </p>
             </div>
 
             <div class="card">
-                <h3>Твой день</h3>
-                <h1 style="color: #fff;">13.02</h1>
-                <p>2007 год. Дата, когда мир стал ярче и обрел тебя.</p>
+                <h3 style="color: var(--gold);">Special Date</h3>
+                <h1 style="font-size: 3.5rem;">13.02</h1>
+                <p>День, когда родилось моё счастье.</p>
             </div>
 
             <div class="card span-2">
-                <div class="image-container">
+                <div class="photo-frame">
                     <img src="aliia.jpg" alt="Рушана">
                 </div>
             </div>
 
             <div class="card">
-                <h3>Forever.</h3>
-                <p style="margin-top: 15px; font-size: 1.1rem; color: #fff; line-height: 1.6;">
-                    Рушана, твоя красота и твой ум — это то, что вдохновляет меня каждый день. Я тебя очень сильно люблю!
+                <h3>My Heart</h3>
+                <p style="margin-top: 15px; font-size: 1.1rem; color: #fff; line-height: 1.6; font-style: italic;">
+                    "Ты мой свет в темноте, мой код без ошибок и моя вечная любовь..."
                 </p>
             </div>
 
@@ -58,6 +112,28 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // ЛЕПЕСТКИ НА ГЛАВНУЮ
+        function createPetals() {
+            const colors = ['#ffccd5', '#ffb3c1', '#f472b6', '#fff'];
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    petal.style.width = Math.random() * 15 + 10 + 'px';
+                    petal.style.height = Math.random() * 10 + 10 + 'px';
+                    petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    petal.style.borderRadius = '0 80% 0 80%';
+                    petal.style.left = Math.random() * 100 + 'vw';
+                    const duration = Math.random() * 6 + 4;
+                    petal.style.animationDuration = duration + 's';
+                    document.body.appendChild(petal);
+                    setTimeout(() => petal.remove(), duration * 1000);
+                }, i * 500);
+            }
+        }
+        setInterval(createPetals, 3500);
+        createPetals();
+    </script>
 </body>
 </html>
-
